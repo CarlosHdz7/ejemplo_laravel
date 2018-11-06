@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Home</h1>
+    <h1>Saludos {{$nombre}}</h1>
+
+    @foreach($opciones as $opcion)
+        <li>{{$opcion}}</li>
+    @endforeach
+
+    <?php foreach($opciones->result() as $row){?>
+        <li><?php echo $row?></li>
+    <?php }?>
+    
 </body>
 </html>
