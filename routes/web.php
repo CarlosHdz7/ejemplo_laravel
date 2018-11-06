@@ -16,13 +16,7 @@ Route::get('/', ['as' => 'home',function () {
 }]);
 
 Route::get('saludos/{nombre?}',['as' => 'saludos',function($nombre = "invitado"){
-    $opciones = [
-        "opcion 1",
-        "opcion 2",
-        "opcion 3",
-        "opcion 4"
-    ];
-    return view('saludos',compact('nombre','opciones'));
+    return view('saludos',compact('nombre'));
 }]);
 
 Route::get('contactos',['as' => 'contactos',function(){
