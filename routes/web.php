@@ -11,14 +11,8 @@
 |
 */
 
-Route::get('/', ['as' => 'home',function () {
-    return view('home');
-}]);
+Route::get('/', ['as' => 'home','uses' => 'PagesController@home']);
 
-Route::get('saludos/{nombre?}',['as' => 'saludos',function($nombre = "invitado"){
-    return view('saludos',compact('nombre'));
-}]);
+Route::get('saludos/{nombre?}',['as' => 'saludos','uses' => 'PagesController@saludos']);
 
-Route::get('contactos',['as' => 'contactos',function(){
-    return view('contactos');
-}]);
+Route::get('contactos',['as' => 'contactos', 'uses' => 'PagesController@contact']);
